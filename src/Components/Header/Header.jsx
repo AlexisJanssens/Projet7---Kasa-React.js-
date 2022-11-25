@@ -6,17 +6,16 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
+  margin-top: 30px;
+  margin-bottom: 60px;
 `
 const Logo = styled.img`
   height: 40px;
 `
 
 const StyledLink = styled(Link)`
-  margin-right: 10px;
+  margin-left: 57px;
   color: #ff6060;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
   font-weight: 500;
   font-size: 24px;
   text-decoration: none;
