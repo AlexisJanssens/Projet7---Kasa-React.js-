@@ -7,12 +7,14 @@ import Error404 from './Components/Error404/Error404';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Logement from './Pages/Logement/Logement';
+import GlobalStyle from './utils/style/GlobalStyle';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
+      <GlobalStyle/>
       <Header/>
       <Routes>
         <Route exact path='/' element={<Home/>}></Route>
