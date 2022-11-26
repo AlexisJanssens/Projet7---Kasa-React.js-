@@ -2,24 +2,31 @@ import { LogementData } from '../../Pages/Logement/LogementData'
 import styled from 'styled-components'
 import Card from '../Card/Card'
 
-const CardsContainer = styled.div`
+const Container = styled.div`
+background-color: #F6F6F6;
+margin-top: 43px;
+margin-bottom: 43px;
+border-radius: 25px;
+max-width: 1440px;
+`
+
+const CardsGrid = styled.div`
   display: grid;
-  gap: 24px;
-  grid-template-rows: 350px 350px;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  justify-items: center;
+  padding: 56px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: max-content;
+  gap: 45px;
 `
 
 function Gallery() {
   return (
-    <div>
-      <CardsContainer>
+    <Container>
+      <CardsGrid>
         {LogementData.map((logement, index) => (
           <Card key={index} title={logement.title} cover={logement.cover} />
         ))}
-      </CardsContainer>
-    </div>
+      </CardsGrid>
+    </Container>
   )
 }
 

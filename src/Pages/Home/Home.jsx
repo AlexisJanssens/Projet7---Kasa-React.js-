@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import Banner from '../../Components/Banner/Banner'
 import Gallery from '../../Components/Gallery/Gallery'
 import { LogementData } from '../Logement/LogementData'
@@ -5,11 +6,16 @@ import { LogementData } from '../Logement/LogementData'
 function Home() {
   console.log(LogementData)
 
+  const Container = styled.div`
+    padding-left: 25px;
+    padding-right: 25px;
+  `
+
   return (
-    <div>
+    <Container>
       <Banner />
       <Gallery />
-    </div>
+    </Container>
   )
 }
 
