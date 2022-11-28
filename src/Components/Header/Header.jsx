@@ -6,10 +6,12 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
   margin-top: 30px;
   margin-bottom: 60px;
   padding-left: 25px;
   padding-right: 25px;
+  max-width: 1440px;
 `
 const Logo = styled.img`
   height: 40px;

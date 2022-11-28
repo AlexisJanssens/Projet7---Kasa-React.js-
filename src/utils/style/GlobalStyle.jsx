@@ -4,7 +4,6 @@ import '../style/font.css'
 const StyledGlobalStyle = createGlobalStyle`
     body {
         background-color: #FFFFFF ;
-        max-width: 1440px;
         margin: auto;
         font-family: 'Montserrat', sans-serif;    }
 `

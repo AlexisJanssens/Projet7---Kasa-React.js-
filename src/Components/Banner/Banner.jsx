@@ -4,22 +4,15 @@ const BannerContainer = styled.div`
   position: relative;
   display: flex;
   height: 223px;
-  ::before {
-    content: '';
-    background-image: url(/IMGBannerHomePage.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    filter: brightness(70%);
-    border-radius: 25px;
-  }
 `
-
+const ImageBackground = styled.img`
+  position: absolute;
+  z-index: -1;
+  filter: brightness(70%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`
 const BannerText = styled.p`
   position: relative;
   margin: auto;
@@ -28,10 +21,14 @@ const BannerText = styled.p`
   font-size: 48px;
 `
 
-function Banner() {
+function Banner(props) {
   return (
     <BannerContainer>
-      <BannerText>Chez vous, partout et ailleurs</BannerText>
+      <ImageBackground
+        src={props.background}
+        alt={'background'}
+      ></ImageBackground>
+      <BannerText>{props.text}</BannerText>
     </BannerContainer>
   )
 }
