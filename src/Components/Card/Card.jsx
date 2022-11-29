@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors, fonts } from '../../utils/style/colors'
+import { Link } from 'react-router-dom'
 
 const CardWrapper = styled.div`
   display: flex;
@@ -51,12 +52,16 @@ const CardGradient = styled.div`
   border-radius: 10px;
 `
 
-function Cards({ title, cover }) {
+function Cards({ title, cover, id }) {
+  const linkId = `/Accomodation/${id}`
+
   return (
     <CardWrapper>
-      <CardCover src={cover} alt="image de l'appartement"></CardCover>
-      <CardGradient></CardGradient>
-      <CardTitle>{title}</CardTitle>
+      <Link to={linkId}>
+        <CardCover src={cover} alt="image de l'appartement"></CardCover>
+        <CardGradient></CardGradient>
+        <CardTitle>{title}</CardTitle>
+      </Link>
     </CardWrapper>
   )
 }

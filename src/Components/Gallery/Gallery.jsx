@@ -23,8 +23,13 @@ function Gallery() {
   return (
     <Container>
       <CardsGrid>
-        {LogementData.map((logement, index) => (
-          <Card key={index} title={logement.title} cover={logement.cover} />
+        {LogementData.map((logement) => (
+          <Card
+            key={logement.id}
+            title={logement.title}
+            cover={logement.cover}
+            id={logement.id}
+          />
         ))}
       </CardsGrid>
     </Container>
