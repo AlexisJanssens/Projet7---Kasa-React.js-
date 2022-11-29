@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import logoFooter from '../../assets/LOGOLogoFooter.svg'
+import { colors, fonts } from '../../utils/style/colors'
 
 const FooterContainer = styled.div`
-  background-color:black;
+  background-color: black;
   height: 209px;
   display: flex;
   flex-direction: column;
@@ -15,9 +16,9 @@ const LogoFooter = styled.img`
 `
 
 const Copyright = styled.p`
-  color: white;
+  color: ${colors.tertiary};
   text-align: center;
-  font-size: 24px;
+  font-size: ${fonts.normalSize};
   margin: 0;
 `
 
@@ -26,7 +27,8 @@ function Footer() {
     <FooterContainer>
       <LogoFooter src={logoFooter} alt="logo Kasa"></LogoFooter>
       <Copyright>© 2020 Kasa. All rights reserved</Copyright>
-    </FooterContainer>)
+    </FooterContainer>
+  )
 }
 
 export default Footer

@@ -1,13 +1,14 @@
 import { LogementData } from '../../Pages/Logement/LogementData'
 import styled from 'styled-components'
 import Card from '../Card/Card'
+import { colors } from '../../utils/style/colors'
 
 const Container = styled.div`
-background-color: #F6F6F6;
-margin-top: 43px;
-margin-bottom: 43px;
-border-radius: 25px;
-max-width: 1440px;
+  background-color: ${colors.secondary};
+  margin-top: 43px;
+  margin-bottom: 43px;
+  border-radius: 25px;
+  max-width: 1440px;
 `
 
 const CardsGrid = styled.div`

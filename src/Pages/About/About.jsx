@@ -4,6 +4,7 @@ import Banner from '../../Components/Banner/Banner'
 import Button from '../../Components/DropdownText/Button'
 import DropdownText from '../../Components/DropdownText/DropdownText'
 import background from '../../assets/gustavo-alves-YOXSC4zRcxw-unsplash 1background.png'
+import { colors, fonts } from '../../utils/style/colors'
 
 const Container = styled.div`
   padding-left: 25px;
@@ -15,16 +16,16 @@ const Container = styled.div`
 const DropdownBar = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: #ff6060;
+  background-color: ${colors.primary};
   color: white;
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: ${fonts.normalWeight};
+  font-size: ${fonts.mediumSize};
   border-radius: 5px;
 `
 
 const Title = styled.h2`
-  font-size: 24px;
-  font-weight: 500;
+  font-size: ${fonts.normalSize};
+  font-weight: ${fonts.normalWeight};
   margin-left: 1em;
 `
 const TextBox = styled.div`

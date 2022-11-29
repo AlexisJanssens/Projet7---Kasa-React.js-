@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { colors, fonts } from '../../utils/style/colors'
 
 const BannerContainer = styled.div`
   position: relative;
@@ -16,9 +17,12 @@ const ImageBackground = styled.img`
 const BannerText = styled.p`
   position: relative;
   margin: auto;
-  color: white;
-  font-weight: 500;
-  font-size: 48px;
+  color: ${colors.tertiary};
+  font-weight: ${fonts.normalWeight};
+  font-size: ${fonts.bigSize};
+  :hover {
+    cursor: default;
+  }
 `
 
 function Banner(props) {

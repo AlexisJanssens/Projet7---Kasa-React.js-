@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components'
+import { colors, fonts } from '../../utils/style/colors'
 
 const test = keyframes`
   0% {
@@ -12,7 +13,7 @@ const test = keyframes`
 `
 
 const TextContainer = styled.div`
-  background-color: #f6f6f6;
+  background-color: ${colors.secondary};
   border-radius: 5px;
   position: relative;
   bottom: 1em;
@@ -20,11 +21,11 @@ const TextContainer = styled.div`
   animation: ${test} 650ms;
 `
 const Text = styled.p`
-  font-size: 24px;
+  font-size: ${fonts.normalSize};
   margin: 0;
   padding: 0.7em;
   padding-top: 1.4em;
-  color: #ff6060;
+  color: ${colors.primary};
 `
 
 function DropdownText({ text, isOpen }) {

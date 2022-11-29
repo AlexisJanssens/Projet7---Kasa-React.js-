@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { colors, fonts } from '../../utils/style/colors'
 
 const CardWrapper = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ const CardWrapper = styled.div`
   min-width: 100px;
   min-height: 100px;
   position: relative;
-  background: #FF6060;
+  background: ${colors.primary};
   &:hover {
     cursor: pointer;
   }
@@ -16,9 +17,9 @@ const CardWrapper = styled.div`
 
 const CardTitle = styled.p`
   position: absolute;
-  font-size: 18px;
+  font-size: ${fonts.smallsize};
   font-weight: normal;
-  color: white;
+  color: ${colors.tertiary};
   bottom: 0px;
   z-index: 3;
   width: 50%;
@@ -35,14 +36,19 @@ const CardCover = styled.img`
   border-radius: 10px;
 `
 const CardGradient = styled.div`
-position: absolute;
-top: 0px;
-left: 0px;
-background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);  width: 100%;
-z-index: 2;
-width: 100%;
-height: 100%;
-border-radius: 10px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  width: 100%;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 `
 
 function Cards({ title, cover }) {

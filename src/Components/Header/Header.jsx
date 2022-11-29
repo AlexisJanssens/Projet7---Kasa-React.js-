@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import logo from '../../assets/LOGO.png'
+import { colors, fonts } from '../../utils/style/colors'
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -19,9 +20,9 @@ const Logo = styled.img`
 
 const StyledLink = styled(Link)`
   margin-left: 57px;
-  color: #ff6060;
-  font-weight: 500;
-  font-size: 24px;
+  color: ${colors.primary};
+  font-weight: ${fonts.normalWeight};
+  font-size: ${fonts.normalSize};
   text-decoration: none;
   &:hover {
     text-decoration: underline;
