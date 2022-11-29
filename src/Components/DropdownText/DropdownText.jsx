@@ -1,4 +1,15 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const test = keyframes`
+  0% {
+    transform :translateY(-100px);
+    opacity: 0;
+    }
+  100% {
+    transform :translateY(0px);
+    opacity: 1;
+  }
+`
 
 const TextContainer = styled.div`
   background-color: #f6f6f6;
@@ -6,6 +17,7 @@ const TextContainer = styled.div`
   position: relative;
   bottom: 1em;
   z-index: -1;
+  animation: ${test} 650ms;
 `
 const Text = styled.p`
   font-size: 24px;

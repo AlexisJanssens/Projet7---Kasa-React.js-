@@ -44,10 +44,10 @@ const BoxesContainer = styled.article`
 `
 
 function About() {
-  const [isOpen, setOpen] = useState(true)
-  const [isOpen2, setOpen2] = useState(true)
-  const [isOpen3, setOpen3] = useState(true)
-  const [isOpen4, setOpen4] = useState(true)
+  const [isOpen, setOpen] = useState(false)
+  const [isOpen2, setOpen2] = useState(false)
+  const [isOpen3, setOpen3] = useState(false)
+  const [isOpen4, setOpen4] = useState(false)
 
   return (
     <Container>
