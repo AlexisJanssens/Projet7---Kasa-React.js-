@@ -52,16 +52,20 @@ const CardGradient = styled.div`
   border-radius: 10px;
 `
 
+const StyledLink = styled(Link)`
+height: 100%;
+`
+
 function Cards({ title, cover, id }) {
   const linkId = `/Accomodation/${id}`
 
   return (
     <CardWrapper>
-      <Link to={linkId}>
+      <StyledLink to={linkId}>
         <CardCover src={cover} alt="image de l'appartement"></CardCover>
         <CardGradient></CardGradient>
         <CardTitle>{title}</CardTitle>
-      </Link>
+      </StyledLink>
     </CardWrapper>
   )
 }
