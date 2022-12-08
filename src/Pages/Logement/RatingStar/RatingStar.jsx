@@ -13,11 +13,11 @@ function RatingStar(props) {
 
   return (
     <RatingContainer>
-      {ratingArray.map((star) =>
+      {ratingArray.map((star, index) =>
         star <= props.rating ? (
-          <img src={fullStar} alt="full star rating" />
+          <img src={fullStar} alt="full star rating" key={index} />
         ) : (
-          <img src={emptyStar} alt="empty star rating" />
+          <img src={emptyStar} alt="empty star rating" key={index} />
         )
       )}
     </RatingContainer>

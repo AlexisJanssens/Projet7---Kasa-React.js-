@@ -1,10 +1,13 @@
 import styled from 'styled-components'
-import { colors, fonts } from '../../utils/style/colors'
+import { colors, fonts, media } from '../../utils/style/colors'
 
 const BannerContainer = styled.div`
   position: relative;
   display: flex;
   height: 223px;
+  @media (max-width: ${media.mobile}) {
+    height: 111px;
+  }
 `
 const ImageBackground = styled.img`
   position: absolute;
@@ -13,6 +16,11 @@ const ImageBackground = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 25px;
+  @media (max-width: ${media.mobile}) {
+    border-radius: 10px;
+    object-fit: cover;
+  }
 `
 const BannerText = styled.p`
   position: relative;
@@ -22,6 +30,11 @@ const BannerText = styled.p`
   font-size: ${fonts.bigSize};
   :hover {
     cursor: default;
+  }
+  @media (max-width: ${media.mobile}) {
+    font-size: ${fonts.normalSize};
+    margin: auto 16px;
+    width: 217px;
   }
 `
 

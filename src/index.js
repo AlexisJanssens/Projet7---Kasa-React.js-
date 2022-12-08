@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Home from './Pages/Home/Home';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import About from './Pages/About/About';
 import Error404 from './Components/Error404/Error404';
 import Header from './Components/Header/Header';
@@ -20,6 +20,7 @@ root.render(
             <Route exact path='/' element={<Home/>}></Route>
             <Route path='/Accomodation/:idLogement' element={<Logement/>}></Route>
             <Route path='/About' element={<About/>}></Route>
+            <Route path="/kaza" element={<Navigate to="/" replace />} />
             <Route path='*' element={<Error404 />}></Route>
           </Routes>
        <Footer/>

@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import DropdownBox from '../../Components/DropdownBox/DropdownBox'
-import LogementData from '../../data/LogementData.JSON'
+import { LogementData } from './LogementData'
 import Slider from '../../Components/Slider/Slider'
 import styled from 'styled-components'
 import { colors, fonts } from '../../utils/style/colors'

@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { colors, fonts } from '../../utils/style/colors'
+import { colors, fonts, media } from '../../utils/style/colors'
 
 const test = keyframes`
   0% {
@@ -12,6 +12,20 @@ const test = keyframes`
   }
 `
 
+const testMobile = keyframes`
+ 0% {
+    transform :translateY(-100px);
+    opacity: 0;
+    }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    transform :translateY(0px);
+    opacity: 1;
+  }  
+`
+
 const TextContainer = styled.div`
   background-color: ${colors.secondary};
   border-radius: 5px;
@@ -19,6 +33,9 @@ const TextContainer = styled.div`
   bottom: 1em;
   z-index: -1;
   animation: ${test} 650ms;
+  @media (max-width: ${media.mobile}) {
+    animation: ${testMobile} 650ms;
+  }
 `
 const Text = styled.p`
   font-size: ${fonts.normalSize};
@@ -26,6 +43,10 @@ const Text = styled.p`
   padding: 0.7em;
   padding-top: 1.4em;
   color: ${colors.primary};
+  @media (max-width: ${media.mobile}) {
+    font-size: 14px;
+    padding: 2em 1.4em 3em;
+  }
 `
 
 function DropdownText({ text, isOpen }) {

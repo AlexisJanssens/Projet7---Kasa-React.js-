@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Banner from '../../Components/Banner/Banner'
 import background from '../../assets/gustavo-alves-YOXSC4zRcxw-unsplash 1background.png'
 import DropdownBox from '../../Components/DropdownBox/DropdownBox'
+import { media } from '../../utils/style/colors'
 
 const Container = styled.div`
   padding-left: 25px;
@@ -16,6 +17,9 @@ const BoxesContainer = styled.article`
   margin: auto;
   padding-top: 2em;
   padding-bottom: 2em;
+  @media (max-width: ${media.mobile}) {
+    width: 100%;
+  }
 `
 
 function About() {

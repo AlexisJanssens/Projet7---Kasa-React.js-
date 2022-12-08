@@ -11,7 +11,10 @@ export const fonts = {
     mediumSize: '36px',
     bigSize: '48px',
     XXLSize: '288px',
-    normalWeight: '400',
+    normalWeight: '500',
     boldWeight: '700'
 }
 
+export const media ={
+    mobile: '375px'
+}

@@ -1,6 +1,7 @@
 import ArrowDown from '../../assets/VectorDropdownArrow.png'
 import styled from 'styled-components'
 import { useState } from 'react'
+import { media } from '../../utils/style/colors'
 
 const ButtonDown = styled.button`
   background-color: transparent;
@@ -9,14 +10,12 @@ const ButtonDown = styled.button`
   :hover {
     cursor: pointer;
   }
+  @media (max-width: ${media.mobile}) {
+    width: 10px;
+  } ;
 `
 
 function Button({ isOpen, setOpen }) {
-  // const arrow = document.getElementById('arrow')
-
-  // arrow.addEventListener('click', () => {
-  //   arrow.style.transform = 'rotate(180deg)'
-  // })
   const [rotateIcon, setRotateIcon] = useState(false)
 
   function handleRotation() {
