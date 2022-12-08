@@ -8,10 +8,10 @@ export const colors = {
 export const fonts = {
     smallsize: '18px',
     normalSize: '24px',
-    mediumSize: '38px',
+    mediumSize: '36px',
     bigSize: '48px',
     XXLSize: '288px',
-    normalWeight: '500',
+    normalWeight: '400',
     boldWeight: '700'
 }
 

@@ -2,17 +2,23 @@ import styled from 'styled-components'
 import rightArrow from '../../assets/VectorArrowRight.png'
 
 const BtnConatiner = styled.div`
-position: absolute;
-right: 0;
+  position: absolute;
+  top: 210px;
+  right: 0;
 `
-function ButtonSliderRight ({moveNextSlide}) {
-    return (
-        <BtnConatiner>
-            <button onClick={moveNextSlide}>
-                <img src={rightArrow} alt='next slide'></img>
-            </button>
-        </BtnConatiner>
-    )
+const Btn = styled.button`
+  background: none;
+  border: none;
+`
+
+function ButtonSliderRight({ moveNextSlide }) {
+  return (
+    <BtnConatiner>
+      <Btn onClick={moveNextSlide}>
+        <img src={rightArrow} alt="next slide"></img>
+      </Btn>
+    </BtnConatiner>
+  )
 }
 
 export default ButtonSliderRight

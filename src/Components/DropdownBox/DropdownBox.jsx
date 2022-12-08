@@ -26,21 +26,20 @@ const TextBox = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  width: ${(props) => props.changewidth ? "45%" : "100%" };
 `
 
 function DropdownBox(props) {
   const [isOpen, setOpen] = useState(false)
-  console.log({props})
+  console.log({ props })
 
   return (
-      <TextBox>
-        <DropdownBar>
-          <Title>{props.title}</Title>
-          <Button isOpen={isOpen} setOpen={setOpen}></Button>
-        </DropdownBar>
-        <DropdownText isOpen={isOpen} setOpen={setOpen} text={props.text} />
-      </TextBox>
+    <TextBox style={props.style}>
+      <DropdownBar>
+        <Title>{props.title}</Title>
+        <Button isOpen={isOpen} setOpen={setOpen}></Button>
+      </DropdownBar>
+      <DropdownText isOpen={isOpen} setOpen={setOpen} text={props.text} />
+    </TextBox>
   )
 }
 

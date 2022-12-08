@@ -2,18 +2,21 @@ import styled from 'styled-components'
 import leftArrow from '../../assets/VectorArrowLeft.png'
 
 const BtnConatiner = styled.div`
-position: absolute;
+  position: absolute;
+  top: 210px;
 `
-
-function ButtonSliderLeft ({movePrevSlide}) {
-
-    return (
-        <BtnConatiner>
-            <button onClick={movePrevSlide}>
-                <img src={leftArrow} alt='previous slide'></img>
-            </button>
-        </BtnConatiner>
-    )
+const Btn = styled.button`
+  background: none;
+  border: none;
+`
+function ButtonSliderLeft({ movePrevSlide, btnLeft }) {
+  return (
+    <BtnConatiner className={btnLeft}>
+      <Btn onClick={movePrevSlide}>
+        <img src={leftArrow} alt="previous slide"></img>
+      </Btn>
+    </BtnConatiner>
+  )
 }
 
 export default ButtonSliderLeft
