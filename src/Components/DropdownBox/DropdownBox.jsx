@@ -28,6 +28,9 @@ const TextBox = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  @media (max-width: ${media.mobile}) {
+    margin-bottom: 1em;
+  }
 `
 
 function DropdownBox(props) {

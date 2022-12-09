@@ -12,6 +12,9 @@ const ContainerSlider = styled.div`
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  @media (max-width: 375px) {
+    height: 255px;
+  }
 `
 
 const SlideImg = styled.img`

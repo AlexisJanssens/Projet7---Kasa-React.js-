@@ -45,7 +45,7 @@ const Text = styled.p`
   color: ${colors.primary};
   @media (max-width: ${media.mobile}) {
     font-size: 14px;
-    padding: 2em 1.4em 3em;
+    padding: 1.5em 0.7em 0.7em;
   }
 `
 
