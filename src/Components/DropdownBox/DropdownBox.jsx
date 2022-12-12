@@ -30,6 +30,7 @@ const TextBox = styled.div`
   right: 0;
   @media (max-width: ${media.mobile}) {
     margin-bottom: 1em;
+    width: 100%;
   }
 `
 

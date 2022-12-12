@@ -18,11 +18,17 @@ const Title = styled.h1`
   color: ${colors.primary};
   font-weight: ${fonts.normalWeight};
   margin: 0;
+  @media (max-width: 375px) {
+    font-size: ${fonts.smallsize};
+  }
 `
 const Location = styled.h2`
   font-size: ${fonts.smallsize};
   font-weight: ${fonts.normalWeight};
   color: ${colors.primary};
+  @media (max-width: 375px) {
+    font-size: ${fonts.mobileNormalSize};
+  }
 `
 
 const Tags = styled.p`
@@ -33,11 +39,19 @@ const Tags = styled.p`
   font-weight: ${fonts.normalWeight};
   padding: 3px 40px;
   margin-right: 10px;
+  @media (max-width: 375px) {
+    font-size: ${fonts.mobileNormalSize};
+    font-weight: ${fonts.lightWeight};
+    padding: 3px 20px;
+    white-space: nowrap;
+    margin: 5px 10px 5px 0;
+  }
 `
 
 const TagContainer = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 `
 
 const HostName = styled.p`
@@ -47,17 +61,27 @@ const HostName = styled.p`
   width: min-content;
   padding-right: 10px;
   margin: auto 0;
+  @media (max-width: 375px) {
+    font-size: ${fonts.mobileSmallSize};
+  }
 `
 const HostImg = styled.img`
   border-radius: 50%;
   width: 64px;
   height: 64px;
+  @media (max-width: 375px) {
+    height: 32px;
+    width: 32px;
+  }
 `
 const FirstContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 14px;
+  @media (max-width: 375px) {
+    flex-direction: column;
+  }
 `
 
 const HostContainer = styled.div`
@@ -67,15 +91,24 @@ const HostContainer = styled.div`
 `
 
 const SecondContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  @media (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
 `
 
 const HostAndRatingContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width: 375px) {
+    flex-direction: row-reverse;
+    margin-top: 11px;
+  }
 `
 
 const LeftContainer = styled.div`
@@ -117,13 +150,11 @@ function Logement() {
       </FirstContainer>
       <SecondContainer>
         <DropdownBox
-          style={{ width: '45%' }}
           title={'Description'}
           text={logement.description}
           width={40}
         />
         <DropdownBox
-          style={{ width: '45%' }}
           title={'Equipements'}
           text={logement.equipments.map((equip, index) => (
             <Equipements key={index}>- {equip}</Equipements>

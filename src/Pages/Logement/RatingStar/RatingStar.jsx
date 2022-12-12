@@ -6,6 +6,15 @@ const RatingContainer = styled.div`
   text-align: end;
   margin: 13px 0;
   min-width: 150px;
+  @media (max-width: 375px) {
+    text-align: start;
+    margin: auto 0;
+    img {
+      height: 15px;
+      width: 15px;
+      margin-right: 5px;
+    }
+  }
 `
 
 function RatingStar(props) {

@@ -11,8 +11,15 @@ const ButtonDown = styled.button`
     cursor: pointer;
   }
   @media (max-width: ${media.mobile}) {
-    width: 10px;
-  } ;
+    margin-right: 10px;
+  }
+
+  img {
+    @media (max-width: ${media.mobile}) {
+      height: 9px;
+      width: 15px;
+    }
+  }
 `
 
 function Button({ isOpen, setOpen }) {

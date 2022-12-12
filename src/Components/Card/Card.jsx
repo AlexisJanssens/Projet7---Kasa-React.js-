@@ -6,9 +6,8 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  max-height: 300px;
   border-radius: 10px;
-  min-width: 100px;
-  min-height: 100px;
   position: relative;
   background: ${colors.primary};
   &:hover {
@@ -53,7 +52,7 @@ const CardGradient = styled.div`
 `
 
 const StyledLink = styled(Link)`
-height: 100%;
+  height: 100%;
 `
 
 function Cards({ title, cover, id }) {

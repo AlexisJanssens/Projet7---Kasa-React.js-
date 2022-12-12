@@ -6,11 +6,14 @@ export const colors = {
 
 
 export const fonts = {
+    mobileSmallSize: '12px',
+    mobileNormalSize: '14px',
     smallsize: '18px',
     normalSize: '24px',
     mediumSize: '36px',
     bigSize: '48px',
     XXLSize: '288px',
+    lightWeight: '300',
     normalWeight: '500',
     boldWeight: '700'
 }

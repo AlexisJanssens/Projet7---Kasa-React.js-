@@ -10,6 +10,7 @@ import Logement from './Pages/Logement/Logement';
 import GlobalStyle from './utils/style/GlobalStyle';
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

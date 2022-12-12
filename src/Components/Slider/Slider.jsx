@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
+import { media } from '../../utils/style/colors'
 import ButtonSliderLeft from './ButtonSliderLeft'
 import ButtonSliderRight from './ButtonSliderRight'
 import './Slider.css'
@@ -12,8 +13,11 @@ const ContainerSlider = styled.div`
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  @media (max-width: 375px) {
-    height: 255px;
+  @media (max-width: ${media.mobile}) {
+    height: 250px;
+  }
+  @media (max-width: ${media.mobile}) {
+    margin-top: 1.5rem;
   }
 `
 

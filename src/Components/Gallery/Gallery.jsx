@@ -17,10 +17,10 @@ const Container = styled.div`
 
 const CardsGrid = styled.div`
   display: grid;
-  padding: 56px;
+  padding: 3.5vw;
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: max-content;
-  gap: 45px;
+  gap: 3.5vw;
   @media (max-width: ${media.mobile}) {
     grid-template-columns: 1fr;
     padding: 0;
