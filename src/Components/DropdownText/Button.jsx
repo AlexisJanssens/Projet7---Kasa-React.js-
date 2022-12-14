@@ -1,7 +1,7 @@
 import ArrowDown from '../../assets/VectorDropdownArrow.png'
 import styled from 'styled-components'
 import { useState } from 'react'
-import { media } from '../../utils/style/colors'
+import { device } from '../../utils/style/variable'
 
 const ButtonDown = styled.button`
   background-color: transparent;
@@ -10,12 +10,12 @@ const ButtonDown = styled.button`
   :hover {
     cursor: pointer;
   }
-  @media (max-width: ${media.mobile}) {
+  @media (${device.mobile}) {
     margin-right: 10px;
   }
 
   img {
-    @media (max-width: ${media.mobile}) {
+    @media (${device.mobile}) {
       height: 9px;
       width: 15px;
     }

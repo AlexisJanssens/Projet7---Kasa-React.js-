@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import { colors, fonts, media } from '../../utils/style/colors'
+import { colors, device, fonts } from '../../utils/style/variable'
 
 const BannerContainer = styled.div`
   position: relative;
   display: flex;
   height: 223px;
-  @media (max-width: ${media.mobile}) {
+  @media (${device.mobile}) {
     height: 111px;
   }
 `
@@ -17,7 +17,7 @@ const ImageBackground = styled.img`
   height: 100%;
   object-fit: cover;
   border-radius: 25px;
-  @media (max-width: ${media.mobile}) {
+  @media (${device.mobile}) {
     border-radius: 10px;
     object-fit: cover;
   }
@@ -31,7 +31,7 @@ const BannerText = styled.p`
   :hover {
     cursor: default;
   }
-  @media (max-width: ${media.mobile}) {
+  @media (${device.mobile}) {
     font-size: ${fonts.normalSize};
     margin: auto 16px;
     width: 217px;

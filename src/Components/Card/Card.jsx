@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, fonts } from '../../utils/style/colors'
+import { colors, device, fonts } from '../../utils/style/variable'
 import { Link } from 'react-router-dom'
 
 const CardWrapper = styled.div`
@@ -12,6 +12,9 @@ const CardWrapper = styled.div`
   background: ${colors.primary};
   &:hover {
     cursor: pointer;
+  }
+  @media (${device.mobile}) {
+    min-height: 255px;
   }
 `
 

@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { colors, fonts, media } from '../../utils/style/colors'
+import { colors, device, fonts } from '../../utils/style/variable'
 
 const test = keyframes`
   0% {
@@ -33,7 +33,7 @@ const TextContainer = styled.div`
   bottom: 1em;
   z-index: -1;
   animation: ${test} 650ms;
-  @media (max-width: ${media.mobile}) {
+  @media (${device.mobile}) {
     animation: ${testMobile} 650ms;
   }
 `
@@ -43,7 +43,7 @@ const Text = styled.p`
   padding: 0.7em;
   padding-top: 1.4em;
   color: ${colors.primary};
-  @media (max-width: ${media.mobile}) {
+  @media (${device.mobile}) {
     font-size: 14px;
     padding: 1.5em 0.7em 0.7em;
   }

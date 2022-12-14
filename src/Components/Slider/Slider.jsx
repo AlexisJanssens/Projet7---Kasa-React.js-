@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-import { media } from '../../utils/style/colors'
+import { device, fonts } from '../../utils/style/variable'
 import ButtonSliderLeft from './ButtonSliderLeft'
 import ButtonSliderRight from './ButtonSliderRight'
 import './Slider.css'
@@ -13,11 +13,10 @@ const ContainerSlider = styled.div`
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  @media (max-width: ${media.mobile}) {
+  border-radius: 10px;
+  @media (${device.mobile}) {
     height: 250px;
-  }
-  @media (max-width: ${media.mobile}) {
-    margin-top: 1.5rem;
+    margin: 1.5rem auto 1rem;
   }
 `
 
@@ -39,6 +38,17 @@ const Gradient = styled.div`
   );
   width: 100%;
   height: 100%;
+`
+
+const SlideInfo = styled.div`
+  position: absolute;
+  color: white;
+  top: 90%;
+  left: 50%;
+  font-size: ${fonts.smallsize};
+  @media (${device.mobile}) {
+    font-size: ${fonts.mobileNormalSize};
+  }
 `
 
 const StyledLeftBtn = styled(ButtonSliderLeft)`
@@ -77,8 +87,18 @@ function Slider(props) {
         )
       })}
       <Gradient></Gradient>
-      <StyledLeftBtn movePrevSlide={previousSlide} />
-      <ButtonSliderRight moveNextSlide={nextSlide} />
+      <SlideInfo>
+        {slideIndex}/{props.pictures.length}
+      </SlideInfo>
+
+      <StyledLeftBtn
+        movePrevSlide={previousSlide}
+        length={props.pictures.length}
+      />
+      <ButtonSliderRight
+        moveNextSlide={nextSlide}
+        length={props.pictures.length}
+      />
     </ContainerSlider>
   )
 }

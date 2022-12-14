@@ -1,12 +1,13 @@
 import fullStar from '../../../assets/VectorFullStar.png'
 import emptyStar from '../../../assets/VectorEmptyStar.png'
 import styled from 'styled-components'
+import { device } from '../../../utils/style/variable'
 
 const RatingContainer = styled.div`
   text-align: end;
   margin: 13px 0;
   min-width: 150px;
-  @media (max-width: 375px) {
+  @media (${device.mobile}) {
     text-align: start;
     margin: auto 0;
     img {

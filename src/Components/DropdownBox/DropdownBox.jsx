@@ -2,7 +2,8 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import Button from '../../Components/DropdownText/Button'
 import DropdownText from '../../Components/DropdownText/DropdownText'
-import { colors, fonts, media } from '../../utils/style/colors'
+import { colors, fonts } from '../../utils/style/variable'
+import { device } from '../../utils/style/variable'
 
 const DropdownBar = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ const Title = styled.h2`
   font-size: ${fonts.normalSize};
   font-weight: ${fonts.normalWeight};
   margin-left: 1em;
-  @media (max-width: ${media.mobile}) {
+  @media (${device.mobile}) {
     font-size: 15px;
     margin: 10px;
   }
@@ -28,7 +29,7 @@ const TextBox = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  @media (max-width: ${media.mobile}) {
+  @media (${device.mobile}) {
     margin-bottom: 1em;
     width: 100%;
   }

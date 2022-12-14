@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import logoFooter from '../../assets/LOGOLogoFooter.svg'
-import { colors, fonts, media } from '../../utils/style/colors'
+import { colors, device, fonts } from '../../utils/style/variable'
 
 const FooterContainer = styled.div`
   background-color: black;
@@ -20,7 +20,7 @@ const Copyright = styled.p`
   text-align: center;
   font-size: ${fonts.normalSize};
   margin: 0;
-  @media (max-width: ${media.mobile}) {
+  @media (${device.mobile}) {
     font-size: 14px;
   }
 `

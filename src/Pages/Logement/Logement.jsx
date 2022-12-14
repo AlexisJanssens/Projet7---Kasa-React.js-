@@ -3,7 +3,7 @@ import DropdownBox from '../../Components/DropdownBox/DropdownBox'
 import { LogementData } from './LogementData'
 import Slider from '../../Components/Slider/Slider'
 import styled from 'styled-components'
-import { colors, fonts } from '../../utils/style/colors'
+import { colors, device, fonts } from '../../utils/style/variable'
 import RatingStar from './RatingStar/RatingStar'
 
 const PageContainer = styled.div`
@@ -18,7 +18,7 @@ const Title = styled.h1`
   color: ${colors.primary};
   font-weight: ${fonts.normalWeight};
   margin: 0;
-  @media (max-width: 375px) {
+  @media (${device.mobile}) {
     font-size: ${fonts.smallsize};
   }
 `
@@ -26,7 +26,7 @@ const Location = styled.h2`
   font-size: ${fonts.smallsize};
   font-weight: ${fonts.normalWeight};
   color: ${colors.primary};
-  @media (max-width: 375px) {
+  @media (${device.mobile}) {
     font-size: ${fonts.mobileNormalSize};
   }
 `
@@ -39,12 +39,13 @@ const Tags = styled.p`
   font-weight: ${fonts.normalWeight};
   padding: 3px 40px;
   margin-right: 10px;
-  @media (max-width: 375px) {
+  @media (${device.mobile}) {
     font-size: ${fonts.mobileNormalSize};
     font-weight: ${fonts.lightWeight};
     padding: 3px 20px;
     white-space: nowrap;
     margin: 5px 10px 5px 0;
+    border-radius: 5px;
   }
 `
 
@@ -61,7 +62,7 @@ const HostName = styled.p`
   width: min-content;
   padding-right: 10px;
   margin: auto 0;
-  @media (max-width: 375px) {
+  @media (${device.mobile}) {
     font-size: ${fonts.mobileSmallSize};
   }
 `
@@ -69,7 +70,7 @@ const HostImg = styled.img`
   border-radius: 50%;
   width: 64px;
   height: 64px;
-  @media (max-width: 375px) {
+  @media (${device.mobile}) {
     height: 32px;
     width: 32px;
   }
@@ -79,7 +80,7 @@ const FirstContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 14px;
-  @media (max-width: 375px) {
+  @media (${device.mobile}) {
     flex-direction: column;
   }
 `
@@ -94,7 +95,7 @@ const SecondContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  @media (max-width: 375px) {
+  @media (${device.mobile}) {
     display: flex;
     flex-direction: column;
     gap: 0px;
@@ -105,7 +106,7 @@ const HostAndRatingContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  @media (max-width: 375px) {
+  @media (${device.mobile}) {
     flex-direction: row-reverse;
     margin-top: 11px;
   }

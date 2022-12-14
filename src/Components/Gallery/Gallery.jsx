@@ -1,7 +1,7 @@
 import { LogementData } from '../../Pages/Logement/LogementData'
 import styled from 'styled-components'
 import Card from '../Card/Card'
-import { colors, media } from '../../utils/style/colors'
+import { colors, device } from '../../utils/style/variable'
 
 const Container = styled.div`
   background-color: ${colors.secondary};
@@ -9,7 +9,7 @@ const Container = styled.div`
   margin-bottom: 43px;
   border-radius: 25px;
   max-width: 1440px;
-  @media (max-width: ${media.mobile}) {
+  @media (${device.mobile}) {
     background-color: transparent;
     margin: 25px 0;
   }
@@ -21,7 +21,7 @@ const CardsGrid = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: max-content;
   gap: 3.5vw;
-  @media (max-width: ${media.mobile}) {
+  @media (${device.mobile}) {
     grid-template-columns: 1fr;
     padding: 0;
     gap: 20px;
