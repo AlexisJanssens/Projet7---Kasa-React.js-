@@ -20,6 +20,9 @@ const BoxesContainer = styled.article`
   @media (${device.mobile}) {
     width: 100%;
   }
+  @media (${device.tablet}) {
+    width: 100%;
+  }
 `
 
 function About() {

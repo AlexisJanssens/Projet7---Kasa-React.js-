@@ -26,6 +26,9 @@ const CardsGrid = styled.div`
     padding: 0;
     gap: 20px;
   }
+  @media (${device.tablet}) {
+    grid-template-columns: 1fr 1fr;
+  }
 `
 
 function Gallery() {

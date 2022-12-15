@@ -20,11 +20,14 @@ export const fonts = {
 }
 
 const size ={
-    mobile: '320px',
-    tablet: '768px'
+    mobileS: '320px',
+    mobileL: '425px',
+    tablet: '768px',
+    laptop: '1024px'
 }
 
 export const device = {
-    mobile:`(min-width: ${size.mobile})`,
-    tablet:`(min-width: ${size.tablet})`
+    mobile:`(min-width: ${size.mobileS}) and (max-width: ${size.mobileL})`,
+
+    tablet:`(min-width: ${size.mobileL}) and (max-width: ${size.tablet})`
 }

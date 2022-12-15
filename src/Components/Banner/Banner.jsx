@@ -36,6 +36,12 @@ const BannerText = styled.p`
     margin: auto 16px;
     width: 217px;
   }
+
+  @media (${device.tablet}) {
+    font-size: ${fonts.mediumSize};
+    margin: auto;
+    padding: 20px;
+  }
 `
 
 function Banner(props) {

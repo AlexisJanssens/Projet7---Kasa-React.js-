@@ -21,6 +21,8 @@ const Error = styled.h1`
     font-size: 96px;
     margin-top: 1em;
   }
+  @media (${device.tablet}) {
+  }
 `
 
 const ErrorText = styled.p`

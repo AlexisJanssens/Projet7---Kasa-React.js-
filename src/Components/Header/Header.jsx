@@ -36,6 +36,10 @@ const StyledLink = styled(Link)`
     font-size: 14px;
     text-transform: uppercase;
   }
+  @media (${device.tablet}) {
+    font-size: ${fonts.tabletNormalSize};
+    margin-left: 20px;
+  }
 `
 function Header() {
   return (

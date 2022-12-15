@@ -18,6 +18,9 @@ const ContainerSlider = styled.div`
     height: 250px;
     margin: 1.5rem auto 1rem;
   }
+  @media (${device.tablet}) {
+    height: 350px;
+  }
 `
 
 const SlideImg = styled.img`

@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 import { colors, device, fonts } from '../../utils/style/variable'
 
-const test = keyframes`
+const anim = keyframes`
   0% {
     transform :translateY(-100px);
     opacity: 0;
@@ -12,7 +12,7 @@ const test = keyframes`
   }
 `
 
-const testMobile = keyframes`
+const animResponsive = keyframes`
  0% {
     transform :translateY(-100px);
     opacity: 0;
@@ -32,9 +32,12 @@ const TextContainer = styled.div`
   position: relative;
   bottom: 1em;
   z-index: -1;
-  animation: ${test} 650ms;
+  animation: ${anim} 650ms;
   @media (${device.mobile}) {
-    animation: ${testMobile} 650ms;
+    animation: ${animResponsive} 650ms;
+  }
+  @media (${device.tablet}) {
+    animation: ${animResponsive} 650ms;
   }
 `
 const Text = styled.p`
@@ -46,6 +49,9 @@ const Text = styled.p`
   @media (${device.mobile}) {
     font-size: 14px;
     padding: 1.5em 0.7em 0.7em;
+  }
+  @media (${device.tablet}) {
+    font-size: ${fonts.smallsize};
   }
 `
 

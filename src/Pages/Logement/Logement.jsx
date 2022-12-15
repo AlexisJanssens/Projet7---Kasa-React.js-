@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { redirect, useParams } from 'react-router-dom'
 import DropdownBox from '../../Components/DropdownBox/DropdownBox'
 import { LogementData } from './LogementData'
 import Slider from '../../Components/Slider/Slider'
@@ -100,6 +100,11 @@ const SecondContainer = styled.div`
     flex-direction: column;
     gap: 0px;
   }
+  @media (${device.tablet}) {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
 `
 
 const HostAndRatingContainer = styled.div`
@@ -128,6 +133,12 @@ function Logement() {
   const logement = data.find((element) => element.id === idLogement)
   console.log(logement)
   console.log(data)
+
+  if (logement === undefined) {
+    console.log('OK')
+    redirect('/about')
+  }
+
   return (
     <PageContainer>
       <Slider pictures={logement.pictures} />

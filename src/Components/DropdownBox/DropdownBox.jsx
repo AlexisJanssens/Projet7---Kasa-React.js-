@@ -21,6 +21,9 @@ const Title = styled.h2`
     font-size: 15px;
     margin: 10px;
   }
+  @media (${device.tablet}) {
+    font-size: ${fonts.smallsize};
+  }
 `
 const TextBox = styled.div`
   margin-bottom: 2em;

@@ -5,18 +5,18 @@ import { LogementData } from '../Logement/LogementData'
 import homeBackground from '../../assets/IMGBannerHomePage.png'
 import { device } from '../../utils/style/variable'
 
+const Container = styled.div`
+  padding-left: 25px;
+  padding-right: 25px;
+  max-width: 1440px;
+  margin: auto;
+  @media (${device.mobile}) {
+    padding: 0 20px;
+  }
+`
+
 function Home() {
   console.log(LogementData)
-
-  const Container = styled.div`
-    padding-left: 25px;
-    padding-right: 25px;
-    max-width: 1440px;
-    margin: auto;
-    @media (${device.mobile}) {
-      padding: 0 20px;
-    }
-  `
 
   return (
     <Container>
