@@ -9,6 +9,10 @@ const BtnConatiner = styled.div`
   @media (${device.mobile}) {
     top: 115px;
   }
+  @media (${device.tablet}) {
+    top: 150px;
+  }
+
 `
 const Btn = styled.button`
   background: none;
@@ -17,6 +21,10 @@ const Btn = styled.button`
     @media (${device.mobile}) {
       height: 20px;
     }
+    @media (${device.tablet}) {
+    height: 50px;
+  }
+
   }
 `
 

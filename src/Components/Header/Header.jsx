@@ -44,7 +44,9 @@ const StyledLink = styled(Link)`
 function Header() {
   return (
     <HeaderContainer>
+      <Link to={'/'}>
       <Logo src={logo}></Logo>
+      </Link>
       <nav>
         <StyledLink to={'/'}>Accueil</StyledLink>
         <StyledLink to={'/About'}>A Propos</StyledLink>

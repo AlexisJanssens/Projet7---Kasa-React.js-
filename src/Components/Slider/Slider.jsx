@@ -20,6 +20,7 @@ const ContainerSlider = styled.div`
   }
   @media (${device.tablet}) {
     height: 350px;
+    margin-top: 50px;
   }
 `
 
@@ -54,9 +55,6 @@ const SlideInfo = styled.div`
   }
 `
 
-const StyledLeftBtn = styled(ButtonSliderLeft)`
-  width: 300px;
-`
 function Slider(props) {
   const [slideIndex, setSlideIndex] = useState(1)
 
@@ -90,11 +88,12 @@ function Slider(props) {
         )
       })}
       <Gradient></Gradient>
-      <SlideInfo>
-        {slideIndex}/{props.pictures.length}
-      </SlideInfo>
-
-      <StyledLeftBtn
+      {props.pictures.length > 1 ? 
+        <SlideInfo>
+            {slideIndex}/{props.pictures.length}
+        </SlideInfo> 
+        : null}
+      <ButtonSliderLeft
         movePrevSlide={previousSlide}
         length={props.pictures.length}
       />

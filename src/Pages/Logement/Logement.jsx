@@ -1,4 +1,4 @@
-import { redirect, useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import DropdownBox from '../../Components/DropdownBox/DropdownBox'
 import { LogementData } from './LogementData'
 import Slider from '../../Components/Slider/Slider'
@@ -136,8 +136,10 @@ function Logement() {
 
   if (logement === undefined) {
     console.log('OK')
-    redirect('/about')
-  }
+    return (
+      <Navigate to="/Error" replace={true}/>
+    )
+  } 
 
   return (
     <PageContainer>
