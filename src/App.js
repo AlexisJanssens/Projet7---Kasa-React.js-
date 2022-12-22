@@ -18,16 +18,16 @@ import GlobalStyle from './utils/style/GlobalStyle';
 
 function App () {
     return (
-        <Router>
+    <Router>
         <GlobalStyle/>
-        <Header/>
-          <Routes>
-            <Route exact path='/' element={<Home/>}></Route>
-            <Route path='/Accomodation/:idLogement' element={<Logement/>}></Route>
-            <Route path='/About' element={<About/>}></Route>
-            <Route path='*' element={<Error404 />}></Route>
-          </Routes>
-       <Footer/>
+            <Header/>
+            <Routes>
+                <Route exact path='/' element={<Home/>}></Route>
+                <Route path='/Accomodation/:idLogement' element={<Logement/>}></Route>
+                <Route path='/About' element={<About/>}></Route>
+                <Route path='*' element={<Error404 />}></Route>
+            </Routes>
+            <Footer/>
     </Router>
     )
 }
