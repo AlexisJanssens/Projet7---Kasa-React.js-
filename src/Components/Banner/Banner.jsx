@@ -1,6 +1,19 @@
 import styled from 'styled-components'
 import { colors, device, fonts } from '../../utils/style/variable'
 
+function Banner(props) {
+  return (
+    <BannerContainer>
+      <ImageBackground
+        src={props.background}
+        alt={'background'}
+      ></ImageBackground>
+      <BannerText>{props.text}</BannerText>
+    </BannerContainer>
+  )
+}
+
+//Css by styled-components
 const BannerContainer = styled.div`
   position: relative;
   display: flex;
@@ -43,17 +56,5 @@ const BannerText = styled.p`
     padding: 20px;
   }
 `
-
-function Banner(props) {
-  return (
-    <BannerContainer>
-      <ImageBackground
-        src={props.background}
-        alt={'background'}
-      ></ImageBackground>
-      <BannerText>{props.text}</BannerText>
-    </BannerContainer>
-  )
-}
 
 export default Banner

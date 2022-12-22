@@ -2,6 +2,17 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { colors, device, fonts } from '../../utils/style/variable'
 
+function Error404() {
+  return (
+    <Container>
+      <Error>404</Error>
+      <ErrorText>Oups ! La page que vous demandez n'existe pas.</ErrorText>
+      <StyledLink to={'/'}>Retourner à la page d'accueil</StyledLink>
+    </Container>
+  )
+}
+
+// Css by styled-components
 const Container = styled.div`
   text-align: center;
   padding-left: 25px;
@@ -22,6 +33,7 @@ const Error = styled.h1`
     margin-top: 1em;
   }
   @media (${device.tablet}) {
+    font-size: 150px;
   }
 `
 
@@ -35,6 +47,9 @@ const ErrorText = styled.p`
     width: 70%;
     margin: auto;
   }
+  @media (${device.tablet}) {
+    font-size: 28px;
+  }
 `
 const StyledLink = styled(Link)`
   font-size: ${fonts.smallsize};
@@ -45,16 +60,9 @@ const StyledLink = styled(Link)`
     margin: 8em 0 4em;
     font-size: 14px;
   }
+  @media (${device.tablet}) {
+    margin: 6em 0 4em;
+  }
 `
-
-function Error404() {
-  return (
-    <Container>
-      <Error>404</Error>
-      <ErrorText>Oups ! La page que vous demandez n'existe pas.</ErrorText>
-      <StyledLink to={'/'}>Retourner à la page d'accueil</StyledLink>
-    </Container>
-  )
-}
 
 export default Error404

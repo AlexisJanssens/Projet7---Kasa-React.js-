@@ -2,6 +2,16 @@ import styled from 'styled-components'
 import logoFooter from '../../assets/LOGOLogoFooter.svg'
 import { colors, device, fonts } from '../../utils/style/variable'
 
+function Footer() {
+  return (
+    <FooterContainer>
+      <LogoFooter src={logoFooter} alt="logo Kasa"></LogoFooter>
+      <Copyright>© 2020 Kasa. All rights reserved</Copyright>
+    </FooterContainer>
+  )
+}
+
+// Css by styled-components
 const FooterContainer = styled.div`
   background-color: black;
   height: 209px;
@@ -24,14 +34,5 @@ const Copyright = styled.p`
     font-size: 14px;
   }
 `
-
-function Footer() {
-  return (
-    <FooterContainer>
-      <LogoFooter src={logoFooter} alt="logo Kasa"></LogoFooter>
-      <Copyright>© 2020 Kasa. All rights reserved</Copyright>
-    </FooterContainer>
-  )
-}
 
 export default Footer

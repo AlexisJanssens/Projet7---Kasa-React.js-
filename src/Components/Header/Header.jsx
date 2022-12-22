@@ -3,6 +3,21 @@ import styled from 'styled-components'
 import logo from '../../assets/LOGO.png'
 import { colors, device, fonts } from '../../utils/style/variable'
 
+function Header() {
+  return (
+    <HeaderContainer>
+      <Link to={'/'}>
+        <Logo src={logo}></Logo>
+      </Link>
+      <nav>
+        <StyledLink to={'/'}>Accueil</StyledLink>
+        <StyledLink to={'/About'}>A Propos</StyledLink>
+      </nav>
+    </HeaderContainer>
+  )
+}
+
+// Css by styled-components
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -20,6 +35,9 @@ const HeaderContainer = styled.div`
 `
 const Logo = styled.img`
   height: 40px;
+  @media (${device.mobile}) {
+    height: 30px;
+  }
 `
 
 const StyledLink = styled(Link)`
@@ -32,7 +50,7 @@ const StyledLink = styled(Link)`
     text-decoration: underline;
   }
   @media (${device.mobile}) {
-    margin-left: 10px;
+    margin-left: 18px;
     font-size: 14px;
     text-transform: uppercase;
   }
@@ -41,18 +59,5 @@ const StyledLink = styled(Link)`
     margin-left: 20px;
   }
 `
-function Header() {
-  return (
-    <HeaderContainer>
-      <Link to={'/'}>
-      <Logo src={logo}></Logo>
-      </Link>
-      <nav>
-        <StyledLink to={'/'}>Accueil</StyledLink>
-        <StyledLink to={'/About'}>A Propos</StyledLink>
-      </nav>
-    </HeaderContainer>
-  )
-}
 
 export default Header

@@ -4,8 +4,55 @@ import { LogementData } from './LogementData'
 import Slider from '../../Components/Slider/Slider'
 import styled from 'styled-components'
 import { colors, device, fonts } from '../../utils/style/variable'
-import RatingStar from './RatingStar/RatingStar'
+import RatingStar from '../../Components/RatingStar/RatingStar'
 
+function Logement() {
+  // get Id from URL
+  const { idLogement } = useParams()
+  // get data by Id
+  const data = LogementData
+  const logement = data.find((element) => element.id === idLogement)
+
+  // redirect to 404 if Id doesn't exist
+  if (logement === undefined) {
+    return <Navigate to="/Error" replace={true} />
+  }
+
+  return (
+    <PageContainer>
+      <Slider pictures={logement.pictures} />
+      <FirstContainer>
+        <LeftContainer>
+          <Title>{logement.title}</Title>
+          <Location>{logement.location}</Location>
+          <TagContainer>
+            {logement.tags.map((tag, index) => (
+              <Tags key={index}>{tag}</Tags>
+            ))}
+          </TagContainer>
+        </LeftContainer>
+        <HostAndRatingContainer>
+          <HostContainer>
+            <HostName>{logement.host.name}</HostName>
+            <HostImg src={logement.host.picture} alt="host"></HostImg>
+          </HostContainer>
+          <RatingStar rating={logement.rating} />
+        </HostAndRatingContainer>
+      </FirstContainer>
+      <SecondContainer>
+        <DropdownBox title={'Description'} text={logement.description} />
+        <DropdownBox
+          title={'Equipements'}
+          text={logement.equipments.map((equip, index) => (
+            <Equipements key={index}>- {equip}</Equipements>
+          ))}
+        />
+      </SecondContainer>
+    </PageContainer>
+  )
+}
+
+// Css by styled-components
 const PageContainer = styled.div`
   padding-left: 25px;
   padding-right: 25px;
@@ -126,57 +173,5 @@ const LeftContainer = styled.div`
 const Equipements = styled.div`
   margin: 0;
 `
-
-function Logement() {
-  const { idLogement } = useParams()
-  const data = LogementData
-  const logement = data.find((element) => element.id === idLogement)
-  console.log(logement)
-  console.log(data)
-
-  if (logement === undefined) {
-    console.log('OK')
-    return (
-      <Navigate to="/Error" replace={true}/>
-    )
-  } 
-
-  return (
-    <PageContainer>
-      <Slider pictures={logement.pictures} />
-      <FirstContainer>
-        <LeftContainer>
-          <Title>{logement.title}</Title>
-          <Location>{logement.location}</Location>
-          <TagContainer>
-            {logement.tags.map((tag, index) => (
-              <Tags key={index}>{tag}</Tags>
-            ))}
-          </TagContainer>
-        </LeftContainer>
-        <HostAndRatingContainer>
-          <HostContainer>
-            <HostName>{logement.host.name}</HostName>
-            <HostImg src={logement.host.picture} alt="host"></HostImg>
-          </HostContainer>
-          <RatingStar rating={logement.rating} />
-        </HostAndRatingContainer>
-      </FirstContainer>
-      <SecondContainer>
-        <DropdownBox
-          title={'Description'}
-          text={logement.description}
-          width={40}
-        />
-        <DropdownBox
-          title={'Equipements'}
-          text={logement.equipments.map((equip, index) => (
-            <Equipements key={index}>- {equip}</Equipements>
-          ))}
-        />
-      </SecondContainer>
-    </PageContainer>
-  )
-}
 
 export default Logement

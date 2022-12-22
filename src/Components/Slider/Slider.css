@@ -1,3 +1,5 @@
+/* Here we don't use styled-components because this Css change dynamicaly with className */
+
 .slide {
     width: 100%;
     height: 100%;

@@ -5,6 +5,60 @@ import ButtonSliderLeft from './ButtonSliderLeft'
 import ButtonSliderRight from './ButtonSliderRight'
 import './Slider.css'
 
+function Slider(props) {
+  // This hook will define which picture is active
+  const [slideIndex, setSlideIndex] = useState(1)
+
+  // functions for change pictures
+  function nextSlide() {
+    if (slideIndex === props.pictures.length) {
+      setSlideIndex(1)
+    } else {
+      setSlideIndex(slideIndex + 1)
+    }
+  }
+
+  function previousSlide() {
+    if (slideIndex === 1) {
+      setSlideIndex(props.pictures.length)
+    } else {
+      setSlideIndex(slideIndex - 1)
+    }
+  }
+
+  return (
+    <ContainerSlider>
+      {props.pictures.map((obj, index) => {
+        return (
+          <div
+            // this className will change dynamicaly whith the slideIndex and the active slide will be shown
+            className={slideIndex === index + 1 ? 'slideActive' : 'slide'}
+            key={index}
+          >
+            <SlideImg src={obj} alt="appart slide" />
+          </div>
+        )
+      })}
+      <Gradient></Gradient>
+      {/* show SlideInfo if they are many pictures */}
+      {props.pictures.length > 1 ? (
+        <SlideInfo>
+          {slideIndex}/{props.pictures.length}
+        </SlideInfo>
+      ) : null}
+      <ButtonSliderLeft
+        movePrevSlide={previousSlide}
+        length={props.pictures.length}
+      />
+      <ButtonSliderRight
+        moveNextSlide={nextSlide}
+        length={props.pictures.length}
+      />
+    </ContainerSlider>
+  )
+}
+
+// Css by styled-components
 const ContainerSlider = styled.div`
   display: flex;
   width: 100%;
@@ -54,55 +108,5 @@ const SlideInfo = styled.div`
     font-size: ${fonts.mobileNormalSize};
   }
 `
-
-function Slider(props) {
-  const [slideIndex, setSlideIndex] = useState(1)
-
-  function nextSlide() {
-    if (slideIndex === props.pictures.length) {
-      setSlideIndex(1)
-    } else {
-      setSlideIndex(slideIndex + 1)
-    }
-  }
-
-  function previousSlide() {
-    if (slideIndex === 1) {
-      setSlideIndex(props.pictures.length)
-    } else {
-      setSlideIndex(slideIndex - 1)
-    }
-  }
-
-  console.log(slideIndex)
-  return (
-    <ContainerSlider>
-      {props.pictures.map((obj, index) => {
-        return (
-          <div
-            className={slideIndex === index + 1 ? 'slideActive' : 'slide'}
-            key={index}
-          >
-            <SlideImg src={obj} alt="appart slide" />
-          </div>
-        )
-      })}
-      <Gradient></Gradient>
-      {props.pictures.length > 1 ? 
-        <SlideInfo>
-            {slideIndex}/{props.pictures.length}
-        </SlideInfo> 
-        : null}
-      <ButtonSliderLeft
-        movePrevSlide={previousSlide}
-        length={props.pictures.length}
-      />
-      <ButtonSliderRight
-        moveNextSlide={nextSlide}
-        length={props.pictures.length}
-      />
-    </ContainerSlider>
-  )
-}
 
 export default Slider

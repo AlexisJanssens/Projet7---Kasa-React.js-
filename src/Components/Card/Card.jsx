@@ -2,6 +2,21 @@ import styled from 'styled-components'
 import { colors, device, fonts } from '../../utils/style/variable'
 import { Link } from 'react-router-dom'
 
+function Cards({ title, cover, id }) {
+  const linkId = `/Accomodation/${id}`
+
+  return (
+    <CardWrapper>
+      <StyledLink to={linkId}>
+        <CardCover src={cover} alt="image de l'appartement"></CardCover>
+        <CardGradient></CardGradient>
+        <CardTitle>{title}</CardTitle>
+      </StyledLink>
+    </CardWrapper>
+  )
+}
+
+//Css by styled-components
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -57,19 +72,5 @@ const CardGradient = styled.div`
 const StyledLink = styled(Link)`
   height: 100%;
 `
-
-function Cards({ title, cover, id }) {
-  const linkId = `/Accomodation/${id}`
-
-  return (
-    <CardWrapper>
-      <StyledLink to={linkId}>
-        <CardCover src={cover} alt="image de l'appartement"></CardCover>
-        <CardGradient></CardGradient>
-        <CardTitle>{title}</CardTitle>
-      </StyledLink>
-    </CardWrapper>
-  )
-}
 
 export default Cards

@@ -1,6 +1,17 @@
 import styled, { keyframes } from 'styled-components'
 import { colors, device, fonts } from '../../utils/style/variable'
 
+function DropdownText({ text, isOpen }) {
+  if (isOpen === true) {
+    return (
+      <TextContainer>
+        <Text>{text}</Text>
+      </TextContainer>
+    )
+  }
+}
+
+// Css by styled-components
 const anim = keyframes`
   0% {
     transform :translateY(-100px);
@@ -54,15 +65,5 @@ const Text = styled.p`
     font-size: ${fonts.smallsize};
   }
 `
-
-function DropdownText({ text, isOpen }) {
-  if (isOpen === true) {
-    return (
-      <TextContainer>
-        <Text>{text}</Text>
-      </TextContainer>
-    )
-  }
-}
 
 export default DropdownText

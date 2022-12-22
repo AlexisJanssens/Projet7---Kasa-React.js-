@@ -2,33 +2,8 @@ import styled from 'styled-components'
 import rightArrow from '../../assets/VectorArrowRight.png'
 import { device } from '../../utils/style/variable'
 
-const BtnConatiner = styled.div`
-  position: absolute;
-  top: 210px;
-  right: 0;
-  @media (${device.mobile}) {
-    top: 115px;
-  }
-  @media (${device.tablet}) {
-    top: 150px;
-  }
-
-`
-const Btn = styled.button`
-  background: none;
-  border: none;
-  img {
-    @media (${device.mobile}) {
-      height: 20px;
-    }
-    @media (${device.tablet}) {
-    height: 50px;
-  }
-
-  }
-`
-
 function ButtonSliderRight({ moveNextSlide, length }) {
+  // Display button only if they are many pictures
   if (length > 1) {
     return (
       <BtnConatiner>
@@ -39,5 +14,30 @@ function ButtonSliderRight({ moveNextSlide, length }) {
     )
   }
 }
+
+// Css by styled-components
+const BtnConatiner = styled.div`
+  position: absolute;
+  top: 210px;
+  right: 0;
+  @media (${device.mobile}) {
+    top: 115px;
+  }
+  @media (${device.tablet}) {
+    top: 150px;
+  }
+`
+const Btn = styled.button`
+  background: none;
+  border: none;
+  img {
+    @media (${device.mobile}) {
+      height: 20px;
+    }
+    @media (${device.tablet}) {
+      height: 50px;
+    }
+  }
+`
 
 export default ButtonSliderRight

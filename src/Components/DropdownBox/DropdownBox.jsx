@@ -5,6 +5,22 @@ import DropdownText from '../../Components/DropdownText/DropdownText'
 import { colors, fonts } from '../../utils/style/variable'
 import { device } from '../../utils/style/variable'
 
+function DropdownBox(props) {
+  // hook useState for open/close Dropdown
+  const [isOpen, setOpen] = useState(false)
+
+  return (
+    <TextBox style={props.style}>
+      <DropdownBar>
+        <Title>{props.title}</Title>
+        <Button isOpen={isOpen} setOpen={setOpen}></Button>
+      </DropdownBar>
+      <DropdownText isOpen={isOpen} setOpen={setOpen} text={props.text} />
+    </TextBox>
+  )
+}
+
+// Css from styled-components
 const DropdownBar = styled.div`
   display: flex;
   justify-content: space-between;
@@ -37,19 +53,5 @@ const TextBox = styled.div`
     width: 100%;
   }
 `
-
-function DropdownBox(props) {
-  const [isOpen, setOpen] = useState(false)
-
-  return (
-    <TextBox style={props.style}>
-      <DropdownBar>
-        <Title>{props.title}</Title>
-        <Button isOpen={isOpen} setOpen={setOpen}></Button>
-      </DropdownBar>
-      <DropdownText isOpen={isOpen} setOpen={setOpen} text={props.text} />
-    </TextBox>
-  )
-}
 
 export default DropdownBox
