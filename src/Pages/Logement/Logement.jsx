@@ -1,6 +1,6 @@
 import { Navigate, useParams } from 'react-router-dom'
 import DropdownBox from '../../Components/DropdownBox/DropdownBox'
-import { LogementData } from './LogementData'
+import { LogementData } from '../../utils/data/LogementData'
 import Slider from '../../Components/Slider/Slider'
 import styled from 'styled-components'
 import { colors, device, fonts } from '../../utils/style/variable'

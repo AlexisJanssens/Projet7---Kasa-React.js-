@@ -1,4 +1,4 @@
-import { LogementData } from '../../Pages/Logement/LogementData'
+import { LogementData } from '../../utils/data/LogementData'
 import styled from 'styled-components'
 import Card from '../Card/Card'
 import { colors, device } from '../../utils/style/variable'
